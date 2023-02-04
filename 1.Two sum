@@ -5,13 +5,16 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 */
 
 #include<stdio.h>
-#define max 50
+#include<stdlib.h>
+
 int main(){
 	
-	int nums[max],size,i,sum,j;
+	int *nums,size,i,sum,j;
 	
 	printf("dizinin boyutunu giriniz: ");
 	scanf("%d",&size);
+	
+	nums = (int *) malloc(size * sizeof(int));
 	
 	printf("dizinin elemanlarini giriniz: ");
 	
@@ -31,5 +34,6 @@ int main(){
 			}
 		}
 	}
+	free(nums);
 	return 0;
 }
